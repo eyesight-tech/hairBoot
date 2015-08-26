@@ -606,7 +606,7 @@
         </option>
         <option>
           <name>IlinkIcfFile</name>
-          <state>C:\work\singlecue\hairBoot-eyesight\lnkstm8s103f3.icf</state>
+          <state>$PROJ_DIR$\lnkstm8s103f3.icf</state>
         </option>
         <option>
           <name>IlinkIcfFileSlave</name>
