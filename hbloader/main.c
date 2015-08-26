@@ -92,6 +92,9 @@ int main(int argc, char** argv) {
 	do {
 		cmd = 0;
 		resp = (char) ~RESP_ACK;
+
+		tcflush(devfd, TCIOFLUSH);
+
 		nbytes = read(STDIN, &cmd, 1);
 		if (nbytes < 0) {
 			perror("failed to read command from stdin");
