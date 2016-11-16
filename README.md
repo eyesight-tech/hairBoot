@@ -20,6 +20,19 @@ Build
    change vector n to 0x82008200 + 4*n, eg vector 1: 82008204
 4. finished! you get the bin/hex/out now~
 
+Important notes
+----------------
+1. Programming the flash on STM8S device is only possible is the UBC (User Boot Code)
+   is not locked.  This is controller in option bits.
+2. hairBoot provides a mechanism to lock the UBC.
+   Reboot the STM8S
+   Write command BOOT_LOCK_UBC (0xaa)
+   Write 8-bit value to write to UBC Option Byte (OPT->OPT1).
+   (Value indicates number of 64-byte pages locked, starting from 0x8000)
+3. A locked devices can be unlocked by writing 0 to UBC.
+   Another option, using IAR, connect to the device without downloading the code,
+   In 'Option Bytes', right click UBC and unprotect the memory.
+
 Related
 -------
 ST-Node: A library and application demos for ST-Node(tiny stm8s moudle)
